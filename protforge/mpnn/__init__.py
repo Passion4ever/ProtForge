@@ -1,12 +1,9 @@
 """
-ProteinMPNN / LigandMPNN module for protein sequence design.
+Protein sequence design using ProteinMPNN/LigandMPNN.
 
-Supported model types:
-- protein_mpnn: Standard ProteinMPNN
-- ligand_mpnn: LigandMPNN with ligand context
-- soluble_mpnn: Soluble protein optimized
-- per_residue_label_membrane_mpnn: Membrane protein (per-residue label)
-- global_label_membrane_mpnn: Membrane protein (global label)
+Papers:
+- ProteinMPNN: Dauparas et al., Science 2022. https://doi.org/10.1126/science.add2187
+- LigandMPNN: Dauparas et al., Nat Methods 2025. https://doi.org/10.1038/s41592-025-02626-1
 """
 
 from .models import ProteinMPNN, Packer, pack_side_chains

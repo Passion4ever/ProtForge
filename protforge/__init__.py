@@ -4,6 +4,8 @@ Protforge - Protein design toolkit.
 Modules:
 - mpnn: ProteinMPNN/LigandMPNN for sequence design
 - esmfold: ESMFold for structure prediction
+- clean: CLEAN for EC number prediction
 """
 
-__version__ = "1.0.0"
+from importlib.metadata import version
+__version__ = version("protforge")
