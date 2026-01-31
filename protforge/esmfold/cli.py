@@ -9,6 +9,7 @@ app = typer.Typer(
     name="esmfold",
     add_completion=False,
     no_args_is_help=True,
+    context_settings={"help_option_names": ["-h", "--help"]},
 )
 
 
@@ -40,11 +41,12 @@ def check_dtype_support(device: str, dtype_name: str) -> tuple[bool, str]:
 def main(
     input: Path = typer.Option(..., "-i", "--input", help="Input FASTA file", exists=True, dir_okay=False),
     output: Path = typer.Option(..., "-o", "--output", help="Output directory", file_okay=False),
+    device: Optional[str] = typer.Option(None, "--device", help="Device (cuda/cuda:0/cpu)"),
     fp16: bool = typer.Option(False, "--fp16", help="Use float16 precision"),
     bf16: bool = typer.Option(False, "--bf16", help="Use bfloat16 precision (Ampere+ required)"),
     chunk_size: Optional[int] = typer.Option(None, "--chunk-size", help="Chunk size for long sequences"),
     num_recycles: Optional[int] = typer.Option(None, "--num-recycles", help="Number of recycles (default: 4)"),
-    device: Optional[str] = typer.Option(None, "--device", help="Device (cuda/cuda:0/cpu)"),
+    weights: Optional[Path] = typer.Option(None, "--weights", help="Weights directory"),
 ):
     """
     ESMFold - Protein Structure Prediction
@@ -79,7 +81,7 @@ def main(
     from .model import ESMFold
 
     try:
-        model = ESMFold(device=device, dtype=dtype)
+        model = ESMFold(weights_dir=weights, device=device, dtype=dtype)
     except FileNotFoundError as e:
         typer.echo(str(e), err=True)
         raise typer.Exit(1)
@@ -92,7 +94,7 @@ def main(
     )
 
 
-def run():
+def cli():
     app()
 
 

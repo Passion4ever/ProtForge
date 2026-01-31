@@ -31,8 +31,8 @@ def print_help():
     print("  mpnn score --help")
 
 
-def main():
-    """Main entry point for mpnn command."""
+def cli():
+    """CLI entry point for mpnn command."""
     if len(sys.argv) < 2:
         print_help()
         sys.exit(0)
@@ -93,4 +93,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    cli()
