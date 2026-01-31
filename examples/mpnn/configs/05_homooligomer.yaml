@@ -1,0 +1,8 @@
+# 同源寡聚体设计
+pdb_path: mpnn/data/homooligomers/4GYT.pdb
+out_folder: mpnn/outputs/05_homooligomer
+homo_oligomer: 1
+batch_size: 5
+number_of_batches: 2
+temperature: 0.2
+seed: 42

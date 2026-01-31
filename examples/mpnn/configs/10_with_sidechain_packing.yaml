@@ -1,0 +1,9 @@
+# 序列设计 + 侧链打包
+pdb_path: mpnn/data/monomers/5L33.pdb
+out_folder: mpnn/outputs/10_with_packing
+pack_side_chains: true
+number_of_packs_per_design: 4
+batch_size: 2
+number_of_batches: 2
+temperature: 0.1
+seed: 42

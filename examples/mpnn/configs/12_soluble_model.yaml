@@ -1,0 +1,8 @@
+# 可溶蛋白专用模型
+pdb_path: mpnn/data/monomers/5L33.pdb
+out_folder: mpnn/outputs/12_soluble
+model_type: soluble_mpnn
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

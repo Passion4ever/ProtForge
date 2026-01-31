@@ -1,0 +1,8 @@
+# 复合物中设计特定链
+pdb_path: mpnn/data/complexes/3HTN.pdb
+out_folder: mpnn/outputs/02_design_specific_chains
+chains_to_design: "A"
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

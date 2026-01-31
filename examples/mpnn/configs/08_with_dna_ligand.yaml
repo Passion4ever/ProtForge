@@ -1,0 +1,10 @@
+# 含配体（DNA）的蛋白设计
+pdb_path: mpnn/data/with_dna/1BC8.pdb
+out_folder: mpnn/outputs/08_with_dna
+model_type: ligand_mpnn
+chains_to_design: "C"
+ligand_mpnn_use_atom_context: 1
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

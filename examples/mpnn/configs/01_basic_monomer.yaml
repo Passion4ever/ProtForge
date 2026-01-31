@@ -1,0 +1,7 @@
+# 基础单体蛋白设计
+pdb_path: mpnn/data/monomers/5L33.pdb
+out_folder: mpnn/outputs/01_basic_monomer
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

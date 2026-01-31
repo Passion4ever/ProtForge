@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Weights (download separately)
+weights/
+
+# Outputs
+**/outputs/
+
+# IDE
+.idea/
+.vscode/
+**/.claude/
+*.swp
+
+# Environment
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.ruff_cache/

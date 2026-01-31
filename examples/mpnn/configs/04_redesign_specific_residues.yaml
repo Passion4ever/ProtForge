@@ -1,0 +1,9 @@
+# 只设计特定残基（其他固定）
+pdb_path: mpnn/data/complexes/3HTN.pdb
+out_folder: mpnn/outputs/04_redesign_specific
+chains_to_design: "A"
+redesigned_residues: "A:70-78"
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

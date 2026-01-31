@@ -1,0 +1,8 @@
+# 禁用特定氨基酸（避免C/M）
+pdb_path: mpnn/data/monomers/5L33.pdb
+out_folder: mpnn/outputs/07_omit_aa
+omit_AA: "CM"
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

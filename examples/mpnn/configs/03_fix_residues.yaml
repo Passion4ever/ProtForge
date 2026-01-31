@@ -1,0 +1,9 @@
+# 固定特定残基
+pdb_path: mpnn/data/complexes/3HTN.pdb
+out_folder: mpnn/outputs/03_fix_residues
+chains_to_design: "A"
+fixed_residues: "A:100-105,130-131"
+batch_size: 5
+number_of_batches: 2
+temperature: 0.1
+seed: 42

@@ -1,0 +1,6 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.3.0
+prody>=2.0
+typer>=0.9
+transformers>=4.57
+-e .

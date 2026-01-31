@@ -1,0 +1,7 @@
+# 生成多样化序列
+pdb_path: mpnn/data/monomers/6MRR.pdb
+out_folder: mpnn/outputs/09_diverse
+batch_size: 8
+number_of_batches: 10
+temperature: 0.3
+seed: 42
