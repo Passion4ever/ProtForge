@@ -4,20 +4,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "protforge"
-version = "1.0.0"
+version = "1.1.0"
 description = "Protein design toolkit"
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
+authors = [{name = "Passion4ever"}]
 
-dependencies = []
+dependencies = [
+    "typer==0.21.1"
+]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+mpnn = ["prody>=2.0"]
+esmfold = ["transformers==4.57.3"]
+clean = ["transformers==4.57.3", "sklearn"]
+all = ["protforge[mpnn,esmfold,clean]"]
 
 [project.scripts]
-mpnn = "protforge.mpnn.cli:main"
-esmfold = "protforge.esmfold.cli:run"
+mpnn = "protforge.mpnn.cli:cli"
+esmfold = "protforge.esmfold.cli:cli"
+clean = "protforge.clean.cli:cli"
 
 [tool.setuptools.packages.find]
 where = ["."]

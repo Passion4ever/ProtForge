@@ -17,6 +17,7 @@ weights/
 .vscode/
 **/.claude/
 *.swp
+CLAUDE.md
 
 # Environment
 .env
