@@ -57,9 +57,10 @@ class ESMFold:
             weights_dir = self.DEFAULT_WEIGHTS_DIR
         weights_dir = Path(weights_dir)
 
-        if not weights_dir.exists():
+        has_model = (weights_dir / "model.safetensors").exists() or (weights_dir / "pytorch_model.bin").exists()
+        if not has_model:
             raise FileNotFoundError(
-                f"Weights not found: {weights_dir}\n"
+                f"Weights not found: {weights_dir.resolve()}\n"
                 f"Run: bash scripts/download_esmfold_weights.sh"
             )
 
