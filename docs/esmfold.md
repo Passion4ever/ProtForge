@@ -43,11 +43,13 @@ esmfold -i esmfold/data/long.fasta -o esmfold/outputs/long --fp16 --chunk-size 6
 |--------|-------------|
 | `-i, --input` | Input FASTA file |
 | `-o, --output` | Output directory |
+| `--device` | Device (cuda/cuda:0/cpu) |
 | `--fp16` | Use float16 precision (faster) |
 | `--bf16` | Use bfloat16 precision (Ampere+ GPU) |
 | `--chunk-size` | Chunk size for long sequences |
 | `--num-recycles` | Number of recycles (default: 4) |
-| `--device` | Device (cuda/cuda:0/cpu) |
+| `--weights` | Weights directory |
+| `-h, --help` | Show help message |
 
 ## Output
 
