@@ -18,7 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 mpnn = ["prody>=2.0"]
 esmfold = ["transformers==4.57.3"]
-clean = ["transformers==4.57.3", "sklearn"]
+clean = ["transformers==4.57.3", "scikit-learn"]
 all = ["protforge[mpnn,esmfold,clean]"]
 
 [project.scripts]
