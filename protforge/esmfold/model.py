@@ -1,6 +1,7 @@
 """ESMFold model wrapper"""
 
 import time
+import warnings
 import torch
 from pathlib import Path
 from typing import Optional, Union, List, Dict, Tuple
@@ -96,7 +97,18 @@ class ESMFold:
             self.model.config.num_recycles = num_recycles
 
         with torch.no_grad():
-            output = self.model.infer(sequence, chunk_size=chunk_size)
+            kwargs = {}
+            if chunk_size is not None:
+                kwargs["chunk_size"] = chunk_size
+            try:
+                output = self.model.infer(sequence, **kwargs)
+            except TypeError:
+                if chunk_size is not None:
+                    warnings.warn(
+                        "chunk_size is not supported by this version of transformers, ignoring. "
+                        "Long sequences may require more GPU memory.",
+                    )
+                output = self.model.infer(sequence)
             output = {
                 k: v.float() if v.dtype in (torch.bfloat16, torch.float16) else v
                 for k, v in output.items()
